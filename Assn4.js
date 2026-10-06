@@ -1,8 +1,20 @@
 const prompt = required(`prompt-sync`)();
 
+let numbers = collect();
+
 
 function collect(){
-    
+    let x = 0, y = [];
+    while(x !== "done"){
+        x = inputnumber();
+        if(isNaN(x)){
+            return y;
+        }
+        else{
+            y.push(x);
+        }
+    }
+    return y;
 }
 
 function max(...numbers){
