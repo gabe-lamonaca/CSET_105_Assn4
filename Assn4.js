@@ -50,31 +50,81 @@ const prompt = require('prompt-sync')();
 // }
 
 
-z = flip()
 
-function flip(){
-    let x = inputnumber();
-    let y = x.indexOf("-");
-    if(y == -1){
-        console.log(x)
-        x = x.split(``).reverse().join(``);
-        console.log(x);
-    }
-    else{
-        x = x.substring(1);
-        x = x.split(``).reverse().join(``);
-        x = "-" + x
-        console.log(x);
-    }
-}
+//Number flipper
+// z = flip()
 
-function inputnumber(){
-    let input = prompt("Enter a number: ");
-    let num = input
-    while(isNaN(num)){
-        console.log(`invalid number`)
-        input = prompt("Enter a number: ");
-        num = input;
+// function flip(){
+//     let x = inputnumber();
+//     let y = x.indexOf("-");
+//     if(y == -1){
+//         console.log(x)
+//         x = x.split(``).reverse().join(``);
+//         console.log(x);
+//     }
+//     else{
+//         x = x.substring(1);
+//         x = x.split(``).reverse().join(``);
+//         x = "-" + x
+//         console.log(x);
+//     }
+// }
+
+// function inputnumber(){
+//     let input = prompt("Enter a number: ");
+//     let num = input
+//     while(isNaN(num)){
+//         console.log(`invalid number`)
+//         input = prompt("Enter a number: ");
+//         num = input;
+//     }
+//     return num;
+// }
+
+
+
+//Uppercaseing
+// let input = prompt("Phrase: ");
+
+// console.log(uppercase(input))
+
+
+// function uppercase(str){
+//     let lower = "abcdefghijklmnopqrstuvwxyz";
+//     let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+//     let x = "";
+//     for (let char of str){
+//         const index = lower.indexOf(char)
+//         if (index !== -1){
+//             x += upper[index];
+//         }
+//         else{
+//             x += char;
+//         }
+//     }
+
+//     return x;
+// }
+
+//invert casing
+let input = prompt("Phrase: ");
+console.log(invertcase(input))
+
+function invertcase(str){
+    let lower = "abcdefghijklmnopqrstuvwxyz";
+    let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    let x = "";
+    for (let char of str){
+        const index = lower.indexOf(char)
+        if (index !== -1){
+            x += upper[index];
+        }
+        else{
+            let index = upper.indexOf(char)
+            x += lower[index];
+        }
     }
-    return num;
+    return x;
 }
