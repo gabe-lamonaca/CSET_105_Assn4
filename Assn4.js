@@ -1,6 +1,9 @@
-const prompt = required(`prompt-sync`)();
+const prompt = require('prompt-sync')();
 
 let numbers = collect();
+
+let x = max(numbers);
+console.log(x);
 
 
 function collect(){
@@ -17,24 +20,30 @@ function collect(){
     return y;
 }
 
-function max(...numbers){
+function max(numbers){
     let result = -Infinity;
     for (let number of numbers){
-        if (number > result) result = number;
+        if (number > result){
+            result = number;
+        }
+    }
+    if(result == -Infinity){
+        result = "Null";
     }
     return result;
 }
 
 function inputnumber(){
-    let input = prompt("Enter a number").toLowerCase();
+    let input = prompt("Enter a number: Type done when finished.").toLowerCase();
     let num = input
     while(isNaN(num)){
-        console.log(`invalid number`)
-        input = Number(prompt("Enter a number"));
-        num = input;
-    if(input === "done"){
-        return num;
+        if(input === "done"){
+            return num;
         }
+        console.log(`invalid number`)
+        input = prompt("Enter a number: Type done when finished.").toLowerCase();
+        num = input;
     }
+    num = Number(num);
     return num;
 }

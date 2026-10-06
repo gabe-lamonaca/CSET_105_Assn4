@@ -1,4 +1,6 @@
 // Grocery Manager
+const prompt = require('prompt-sync')();
+
 var grociries = [];
 
 for(a = 0; a != 5; a){
