@@ -1,6 +1,10 @@
 const prompt = required(`prompt-sync`)();
 
 
+function collect(){
+    
+}
+
 function max(...numbers){
     let result = -Infinity;
     for (let number of numbers){
