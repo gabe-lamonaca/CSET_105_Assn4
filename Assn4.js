@@ -14,12 +14,14 @@ function max(...numbers){
 }
 
 function inputnumber(){
-    let input = Number(prompt("Enter a number"));
+    let input = prompt("Enter a number").toLowerCase();
     let num = input
     while(isNaN(num)){
         console.log(`invalid number`)
         input = Number(prompt("Enter a number"));
         num = input;
+    if(input === "done"){
+        return num;
+        }
     }
-    return num;
 }
