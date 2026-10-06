@@ -1,10 +1,13 @@
 const prompt = required(`prompt-sync`)();
 
 
-function max(){
-    
+function max(...numbers){
+    let result = -Infinity;
+    for (let number of numbers){
+        if (number > result) result = number;
+    }
+    return result;
 }
-
 
 function inputnumber(){
     let input = Number(prompt("Enter a number"));
